@@ -1,7 +1,16 @@
-export default function home() {
+'use client';
+import { RoletaHeader } from '../components/roleta';
+import { CategoryProvider } from '../components/roleta/context';
+
+export default function Home() {
+
   return (
-    <div className="bg-[#1f1f1f] h-screen flex">
-      <h1>Pagina HOME</h1>
+    <div>
+      <CategoryProvider>
+        <div>
+          <RoletaHeader />
+        </div>
+      </CategoryProvider>
     </div>
-  )
+  );
 }

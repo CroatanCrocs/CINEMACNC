@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export function Header() {
     return (
-        <header className="flex px-10 py-4 bg-zinc-900 text-white">
+        <header className="flex px-10 py-4 bg-[#5b1317] text-white mb-2">
             <div className="flex items-center justify-between w-full">
                 <div>
                     <Link href="/">
@@ -13,12 +13,16 @@ export function Header() {
                 < nav>
                     <ul className="flex items-center justify-center gap-2">
                         <li>
-                            Home
+                            <Link href="/roleta">
+                                Roleta
+                            </Link>
                         </li>
                         <li>
-                            Posts
+                            <Link href="/login">
+                                Login
+                            </Link>
                         </li>
-                    </ul>    
+                    </ul>
                 </nav>
             </div>
         </header>
