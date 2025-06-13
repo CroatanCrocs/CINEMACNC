@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useActionState } from "react";
 import { registerUserAction } from "@/data/actions/auth-actions";
 import { AuthErrors } from "@/components/errors/auth-errors";
+import { SubmitButton } from "@/components/buttons/submit-button";
 
 import {
   CardTitle,
@@ -78,7 +79,7 @@ export function RegisterForm() {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col">
-            <button className="w-full">Criar</button>
+            <SubmitButton className="w-full" text="Criar" loadingText="Carregando..." />
             <AuthErrors error={formState?.authErrors} />
           </CardFooter>
         </Card>
