@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { useActionState } from "react";
 import { registerUserAction } from "@/data/actions/auth-actions";
+import { AuthErrors } from "@/components/errors/auth-errors";
 
 import {
   CardTitle,
@@ -17,12 +18,12 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 
-import { ZodErrors } from "@/components/custom/zod-errors";
+import { ZodErrors } from "@/components/errors/zod-errors";
 
 const INITIAL_STATE = {
   data: null,
   zodErrors: undefined,
-  strapiErrors: null,
+  authErrors: null,
   message: undefined,
 };
 
@@ -78,6 +79,7 @@ export function RegisterForm() {
           </CardContent>
           <CardFooter className="flex flex-col">
             <button className="w-full">Criar</button>
+            <AuthErrors error={formState?.authErrors} />
           </CardFooter>
         </Card>
         <div className="mt-4 text-center text-sm">
